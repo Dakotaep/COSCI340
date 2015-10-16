@@ -1,3 +1,9 @@
+/*
+ This program asks the user to pick a number from 1 - 10.
+ This number then generates a corresponding number of random numbers with a range of 1 - 4.
+ The program then will tell the user how many occurrences of 1, 2, 3, and 4 there were.
+ */
+
 #include <iostream>
 #include <cstring>
 #include <ctime>
