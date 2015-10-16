@@ -49,11 +49,12 @@ int main()
         
     cout << "Please enter an integer from 1 to 10.\n";
     cin >> num;
-    
+        
     if ((num >= 1) && (num <= 10))
     {
-        cout << "You chose " << num << ". \n"
-             "Thank you for your choice.\n";
+        cout << "\nYou chose " <<num << ".\n\n";
+        cout << num << " random numbers will now be displayed:\n";
+        //cin.ignore();
         
         /*
          When seed is outside of loop that prints random number, numbers printed are different.
@@ -89,7 +90,7 @@ int main()
     }
 
     
-    cout << "Press Y/y to continue. Press anything else to quit.\n";
+    cout << "\nPress Y/y to continue. Press anything else to quit.\n";
         cin >> continu;
         if (continu != 'y' && continu !='Y')
         {
