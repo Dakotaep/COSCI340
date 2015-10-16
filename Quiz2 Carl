@@ -16,6 +16,9 @@
  int main()
  {
 	
+ Input validation experiment from:
+ http://www.cplusplus.com/forum/beginner/21595/
+ 
 	cout << "Enter an int: ";
 	int x = 0;
 	while(!(cin >> x)){
@@ -29,7 +32,7 @@
  */
 
 #include <iostream>
-#include <string>
+//#include <string>   // How does one use getline? I can't get it to work (in XCode)
 #include <ctime>        // Used for seeding
 #include <cstdlib>      // Required for
 using namespace std;
@@ -43,8 +46,7 @@ int main()
     
     while (continu == 'y' || 'Y')
     {
-
-    
+        
     cout << "Please enter an integer from 1 to 10.\n";
     cin >> num;
     
@@ -83,7 +85,7 @@ int main()
     
     else
     {
-        cout << "You didn't enter a number in the correct range, idiot.\n";
+        cout << "You didn't enter a number in the correct range, asshole.\n";
     }
 
     
@@ -91,6 +93,7 @@ int main()
         cin >> continu;
         if (continu != 'y' && continu !='Y')
         {
+            cout << "Have a nice day.\n";
             return 0;
         }
 
