@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cstring>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+
+    int num;
+    int counter;
+    
+    cout << "Please enter an integer from 1 to 10.\n";
+    cin >> num;
+    
+    if ((num >= 1) && (num <= 10))
+    {
+        cout << "You chose " << num << ". \n"
+             "Thank you for your choice.\n";
+        
+        
+        for (counter = 0;  counter < num ; counter++)
+        {
+        //cout << "\nTest";     // Put in whatever here.. in this case random number generator
+            
+            /*
+             srand(time(NULL));
+            signed int rand1;
+            rand1 = rand() % 100 /*+ 1*/
+            
+            unsigned seed = time(0);
+            srand(seed);
+            int rand1 = rand();
+            
+            cout << rand1 << endl;
+            
+        }
+        
+    }
+    
+    else
+        cout << "You didn't enter a number in the correct range you fuckwit.";
+    
+    return 0;
+    
+}
