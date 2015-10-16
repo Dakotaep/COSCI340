@@ -40,7 +40,7 @@ int main()
     }
     
     else
-        cout << "You didn't enter a number in the correct range you fuckwit.";
+        cout << "You didn't enter a number in the correct range.";
     
     return 0;
     
