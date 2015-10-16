@@ -10,10 +10,26 @@
  The frequency of each random number needs to be printed on the screen.
  General input validation.
  
+ #include<iostream>
+ #include<limits>
+ using namespace std;
+ int main()
+ {
+	
+	cout << "Enter an int: ";
+	int x = 0;
+	while(!(cin >> x)){
+ cin.clear();
+ cin.ignore(numeric_limits<streamsize>::max(), '\n');
+ cout << "Invalid input.  Try again: ";
+	}
+	cout << "You enterd: " << x << endl;
+ }
+ 
  */
 
 #include <iostream>
-//#include <cstring>
+#include <string>
 #include <ctime>        // Used for seeding
 #include <cstdlib>      // Required for
 using namespace std;
@@ -23,10 +39,14 @@ int main()
 
     int num;
     int counter;
+    char continu;
+    
+    while (continu == 'y' || 'Y')
+    {
+
     
     cout << "Please enter an integer from 1 to 10.\n";
     cin >> num;
-    
     
     if ((num >= 1) && (num <= 10))
     {
@@ -62,8 +82,19 @@ int main()
     }
     
     else
+    {
         cout << "You didn't enter a number in the correct range, idiot.\n";
+    }
+
     
+    cout << "Press Y/y to continue. Press anything else to quit.\n";
+        cin >> continu;
+        if (continu != 'y' && continu !='Y')
+        {
+            return 0;
+        }
+
+    }
     return 0;
     
 }
