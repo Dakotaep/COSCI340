@@ -1,18 +1,21 @@
 /*
+ 
+ Program by Carl. Give me comments if you have them.
+ 
  This program asks the user to pick a number from 1 - 10.
  This number then generates a corresponding number of random numbers with a range of 1 - 4.
  The program then will tell the user how many occurrences of 1, 2, 3, and 4 there were.
  
  Not yet implemented:
- The range of the random numbers is not yet defined. They are currently being printed as a test.
  The frequency of each random number needs to be printed on the screen.
-
+ General input validation.
+ 
  */
 
 #include <iostream>
-#include <cstring>
-#include <ctime>
-#include <cstdlib>
+//#include <cstring>
+#include <ctime>        // Used for seeding
+#include <cstdlib>      // Required for
 using namespace std;
 
 int main()
@@ -29,29 +32,37 @@ int main()
     {
         cout << "You chose " << num << ". \n"
              "Thank you for your choice.\n";
-    
-        unsigned seed = time(0);        // When seed is outside of loop that prints random number, numbers printed are different
+        
+        /*
+         When seed is outside of loop that prints random number, numbers printed are different.
+         When seed is inside loop the same random number if generated over and over.
+         The reason for this is a mystery at this point.
+         */
+        unsigned seed = time(0);
         srand(seed);
         
         for (counter = 0;  counter < num ; counter++)
         {
-        //cout << "\nTest";     // Put in whatever here.. in this case random number generator
             
             /*
              srand(time(NULL));
             signed int rand1;
-            rand1 = rand() % 100 /*+ 1*/
+            rand1 = rand() % 100 + 1
+             
+            Playing around with random numbers here
+             */
             
-            int rand1 = rand();
+            // Modulus operator used to set range of random numbers from 1 to 4
+            int randomSet = rand() % 4 + 1;
             
-            cout << rand1 << endl;
+            cout << randomSet << endl;
             
         }
         
     }
     
     else
-        cout << "You didn't enter a number in the correct range.";
+        cout << "You didn't enter a number in the correct range, idiot.\n";
     
     return 0;
     
