@@ -1,0 +1,98 @@
+// Possile quiz material that will be needed ^_^ Lemme know if I can improve it. I did not know
+// I was going to make this a function but I need more time to tinker...
+#include <iostream>
+#include <sstream>
+#include "time.h"
+#include <fstream>
+
+using namespace std;
+int read_input(int& input);
+int randum(int& rn);
+
+int main ()
+{
+	int continu = 1;
+	while (continu == 1)
+	{
+
+
+		cout << "How many numbers would you like to generate?";
+		int howmany;
+		int randnumber = 0;
+		int randcounter = 0;
+		int oddcounter = 0;
+		read_input(howmany);
+		
+		cout << "You have entered " << howmany << endl;
+
+		
+		ofstream outputFile;
+		outputFile.open("Odds.txt");
+
+		cout << "Even numbers are:\n";
+		do
+		{
+			int randnumber = randum(randnumber);
+			
+			if (randnumber % 2 == 0)
+			{
+				cout << randnumber << endl;
+				++randcounter;
+			}
+			if (randnumber % 2 != 0)
+			{
+				outputFile << randnumber << endl;
+				++randcounter;
+				++oddcounter;
+			}
+
+		} while (howmany != randcounter);
+		outputFile.close();
+		cout << "Odd numbers are:\n";
+
+		fstream inFile;
+		inFile.open("Odds.txt");
+
+		do
+		{
+			int Odds;
+			inFile >> Odds;
+			cout << Odds << endl;
+			--oddcounter;
+		} while (oddcounter != 0);
+		
+		inFile.close();
+
+		cout << "Try again? Enter 1 to try again?";
+			read_input(continu);
+			
+	}
+	
+	
+	return 0;
+}
+
+int read_input(int& input)
+{
+	bool valid = false;
+	while (!valid) {
+		cout << "\nEnter number: \n";
+		cin >> input;
+		if (cin.fail())
+		{
+			cout << "\nWrong input\n" << endl;
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+		}
+		else
+		{
+			valid = true;
+		}
+	}
+	return input;
+}
+int randum(int& rn)
+{
+	rn = rand() % 99 + 1;
+	return rn;
+}
